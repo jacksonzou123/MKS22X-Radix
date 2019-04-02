@@ -11,6 +11,12 @@ public class LinkedList<E>{
     return size;
   }
 
+  public void clear() {
+    size = 0;
+    start = null;
+    end = null;
+  }
+
   public boolean add(E element) {
     if (size()==0){
       start = new Node(element, null, null);

@@ -50,6 +50,12 @@ public class Deque<E>{
     }
   }
 
+  public void clear() {
+    size = 0;
+    start = 0;
+    end = 0;
+  }
+
   public String toString(){
     if (size == 0) {
       return "{}";
@@ -69,7 +75,9 @@ public class Deque<E>{
     if (!done) {
       index = 0;
       while (index <= end) {
-        f += data[index] + " ";
+        if (data[index] != null) {
+          f += data[index] + " ";
+        }
         index++;
       }
     }
@@ -157,3 +165,4 @@ public class Deque<E>{
     }
     return data[end];
   }
+}
