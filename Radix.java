@@ -15,9 +15,8 @@ public class Radix{
         int digit = data[i] % 10;
         buckets[digit+9].add(data[i]);
     }
-    for (int i = 1; i < buckets.length; i++) {
-      
-    }
+    //for (int i = 1; i < buckets.length; i++) {
+    //}
 
     for (int i = 0; i < buckets.length; i++) {
       System.out.println(buckets[i].toString());
