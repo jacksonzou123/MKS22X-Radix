@@ -23,9 +23,6 @@ public class Radix{
         buckets[19].extend(buckets[i]);
       }
     }
-    for (int i = 0; i < buckets.length; i++) {
-      System.out.println(buckets[i].toString());
-    }
     int place = 1;
     while (place <= runs) {
       while (buckets[19].size() > 0) {
@@ -40,9 +37,10 @@ public class Radix{
       }
       place++;
     }
-    for (int i = 0; i < buckets.length; i++) {
-      System.out.println(buckets[i].toString());
+    for (int i = 0; i < data.length; i++) {
+      data[i] = buckets[19].removeFront();
     }
+
   }
 
   public static int exp(int base, int expo) {
