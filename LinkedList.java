@@ -45,10 +45,24 @@ public class LinkedList<E>{
     return f;
   }
 
+  public boolean hasNext() {
+    if (end != null) {
+      return true;
+    }
+    return false;
+  }
+
   public void extend(LinkedList<E> other) {
-    end.setNext(other.start);
-    size += other.size();
-    end = other.end;
+    if (this.size == 0) {
+      start = other.start;
+      end = other.end;
+      size = other.size;
+    }
+    else {
+      end.setNext(other.start);
+      end = other.end;
+      size = size + other.size;
+    }
     other.start = null;
     other.end = null;
     other.size = 0;
@@ -60,8 +74,8 @@ public class LinkedList<E>{
       clear();
     }
     else {
-      Node current = start.next();
-      start = current;
+      start = start.next();
+      size--;
     }
     return f;
   }
